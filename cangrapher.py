@@ -38,6 +38,7 @@ def getSquareRoot ():
     root.update()
     x1 = entry1.get()
     df = pd.read_csv(x1)
+    df = df.sort_values('Timestamp')
     fig = px.line(df, x = 'Timestamp', y = 'Value(DEC)', color='Name', title='CANBus Data Values', render_mode="webgl")
     fig.show()
     root.quit()
